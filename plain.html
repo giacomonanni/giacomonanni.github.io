@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giacomo Nanni – Personal Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            height: 100vh;
+            background-color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: left 0.3s ease;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Subsection styling */
+        nav ul li.sub a {
+            font-size: 15px;
+            padding-left: 20px;
+            color: #ddd;
+        }
+
+        nav ul li.sub a:hover {
+            background-color: #444;
+        }
+
+        /* Hamburger */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            cursor: pointer;
+            display: block;
+        }
+
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hidden checkbox */
+        #nav-toggle {
+            display: none;
+        }
+
+        /* When menu open */
+        #nav-toggle:checked~nav {
+            left: 0;
+        }
+
+        /* Hamburger transform */
+        #nav-toggle:checked+.menu-toggle .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        #nav-toggle:checked+.menu-toggle .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        #nav-toggle:checked+.menu-toggle .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Click-outside overlay */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 900;
+        }
+
+        #nav-toggle:checked~#overlay {
+            display: block;
+        }
+
+        /* Main content shifting */
+        main {
+            padding: 20px;
+            width: 100%;
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        #nav-toggle:checked~main {
+            transform: translateX(200px);
+        }
+
+        /* Section styling */
+        section {
+            padding: 50px 20px;
+            margin-bottom: 40px;
+            box-sizing: border-box;
+        }
+
+        #about {
+            background-color: #f4f4f4;
+        }
+
+        #research {
+            background-color: #e0e0e0;
+        }
+
+        #teaching {
+            background-color: #d0d0d0;
+        }
+
+        #contact {
+            background-color: #c0c0c0;
+        }
+
+        /* About section layout with photo */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .about-container img {
+            width: 180px;
+            height: auto;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .about-text {
+            max-width: 700px;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                left: 0;
+            }
+
+            main {
+                transform: none !important;
+                margin-left: 200px;
+                width: calc(100% - 200px);
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            #overlay {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="nav-toggle" class="hidden">
+
+    <label for="nav-toggle" class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </label>
+
+    <!-- Overlay for click-outside-to-close -->
+    <label id="overlay" for="nav-toggle"></label>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#research">Research</a></li>
+            <li class="sub"><a href="#interests">— Research Interests</a></li>
+            <li class="sub"><a href="#publications">— Publications</a></li>
+            <li class="sub"><a href="#talks">— Talks & Posters</a></li>
+
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="cv.pdf" target="_blank">CV</a></li>
+            <!--  <li><a href="#contact">Contact</a></li>-->
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- ABOUT -->
+        <section id="about">
+
+            <h1>Giacomo Nanni</h1>
+
+            <div class="about-container">
+                <img src="photo.jpg" alt="Photo of Giacomo Nanni">
+
+
+                <div class="about-text">
+                    <p>
+                        Hi! I am a PhD student in a cotutelle program between Alma Mater Studiorum – Università di
+                        Bologna
+                        (Italy) and Ruhr-Universität Bochum (Germany), under the supervision of Christian Lehn and
+                        Giovanni Mongardi. </p>
+                    <p> My research lies in algebraic and complex
+                        geometry, focused especially on hyperkähler manifolds, Lagrangian fibrations, and Nikulin
+                        orbifolds.
+                    </p>
+                    <p> Here is my <a href="cv.pdf" target="_blank">CV</a></p>
+                    <h2>Contact</h2>
+
+                    <ul>
+                        <li>Email: giacomo.nanni13@unibo.it</li>
+                        <li>Email: giacomo.nanni.math@gmail.com</li>
+                        <li>Institutional website: www.unibo.it/sitoweb/giacomo.nanni13</li>
+                    </ul>
+
+                    <p>
+                        Fakultät für Mathematik<br>
+                        Building IB, office 3/91<br>
+                        Ruhr University Bochum<br>
+                        Universitätsstrasse 150<br>
+                        44801 Bochum, Germany
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH -->
+        <section id="research">
+            <h1>Research</h1>
+
+            <!-- Research Interests -->
+            <h2 id="interests">Research Interests</h2>
+            <p>My interests include:</p>
+            <ul>
+                <li>Hyperkähler manifolds</li>
+                <li>Lagrangian fibrations</li>
+                <li>Nikulin orbifolds</li>
+                <li>Algebraic and complex geometry in a broad sense</li>
+            </ul>
+
+            <!-- Publications -->
+            <h2 id="publications">Publications</h2>
+
+            <h3>Preprints</h3>
+            <ul>
+                <li>
+                    <strong>Monodromy of Nikulin orbifolds</strong><br>
+                    <a href=" https://doi.org/10.48550/arXiv.2503.14441"> arXiv:2503.14441</a>
+                </li>
+                <li>
+                    <strong>Classification of Lagrangian planes in Kummer-type hyperkähler manifolds</strong><br>
+                    <a href="https://doi.org/10.48550/arXiv.2310.15639">arXiv:2310.15639</a>
+                </li>
+
+
+            </ul>
+            <!--
+            <h3>Published Papers</h3>
+            <p><em>None yet.</em></p>
+-->
+            <!-- Talks -->
+            <h2 id="talks">Talks & Posters</h2>
+            <ul>
+                <li>Oberseminar Algebraische und Komplexe Geometrie, Bochum (10.2025)</li>
+                <li>Poster at GAEL XXXII, Toulouse (06.2025)</li>
+                <li>Talk at PhD Open Day, Bologna (03.2025)</li>
+                <li>Talk at University of North Carolina, Chapel Hill (11.2023)</li>
+                <li>Poster, Ricercatori in algebra e geometria, Milano (09.2024)</li>
+                <li>Poster at <em>New perspectives on hyperkähler manifolds</em>, Cetraro</li>
+                <li>Junior talk at LEGAL, Rio de Janeiro (03.2024)</li>
+            </ul>
+        </section>
+
+        <!-- TEACHING -->
+        <section id="teaching">
+            <h1>Teaching</h1>
+            Tutor for the courses of the Alma Mater Studiorum - Università di Bologna:
+
+            <h3>2024–2025</h3>
+            <ul>
+                <li>Aritmetica e Gruppi (BSc Mathematics)</li>
+                <li>Geometria 2 – Topology (BSc Mathematics)</li>
+            </ul>
+
+            <h3>2023–2024</h3>
+            <ul>
+                <li>Algebra e Geometria (Linear Algebra, BSc Physics)</li>
+                <li>Algebra 1 (BSc Mathematics)</li>
+                <li>Algebra 2 (BSc Mathematics)</li>
+                <li>Geometria 2 – Topology (BSc Mathematics)</li>
+            </ul>
+
+            <h3>2022–2023</h3>
+            <ul>
+                <li>Algebra e Geometria (Linear Algebra, BSc Physics)</li>
+            </ul>
+
+        </section>
+
+        <!-- CONTACT 
+        <section id="contact">
+            <h1>Contact</h1>
+
+            <ul>
+                <li>Email: giacomo.nann13@unibo.it</li>
+                <li>Email: giacomo.nanni.math@gmail.com</li>
+                <li>Website: www.unibo.it/sitoweb/giacomo.nanni13</li>
+            </ul>
+
+            <p>
+                Fakultät für Mathematik<br>
+                Building IB, office 3/91<br>
+                Ruhr University Bochum<br>
+                Universitätsstrasse 150<br>
+                44801 Bochum, Germany
+            </p>
+        </section>
+        -->
+
+    </main>
+
+</body>
+
+</html>

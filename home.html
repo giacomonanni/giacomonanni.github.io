@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Giacomo Nanni</title>
+</head>
+
+<html lang="en">
+
+<head></head>
+
+<body data-new-gr-c-s-check-loaded="14.1263.0" data-gr-ext-installed="">
+
+
+
+
+    <meta charset="UTF-8">
+
+    <title> Giacomo Nanni</title>
+    <meta name="description"
+        content="Webpage of Giacomo Nanni (he/him), PhD student at Università di Bologna and Ruhr Universität of Bochum. ">
+    <meta name="author" content="Giacomo Nanni">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Powered by w3.css-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Colors -->
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-cyan.css">
+
+    <!-- Polices -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <!-- Fontawesome-->
+    <script src="https://kit.fontawesome.com/4498386ec9.js"></script>
+    <!-- Favicon dans l'onglet -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Stile del sito -->
+    <link rel="stylesheet" type="text/css" href="pperso.css">
+
+
+
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-theme w3-collapse w3-top w3-large w3-padding"
+        style="z-index:3;width:275px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+            style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-64 w3-xxlarge"><b>Giacomo Nanni</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#research" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Research</a>
+            <a href="#teaching" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Teaching</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-bottom w3-hide-large w3-theme w3-large w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-theme w3-margin-right" onclick="w3_open()">☰</a>
+        <span>Giacomo Nanni</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+
+
+    <!-- DA QUI COMINCIA LA PAGINA -->
+    <div class="w3-main" style="margin-left:320px;margin-right:40px">
+
+
+        <!-- Presentazione -->
+        <div class="w3-container" id="home">
+            <div class="w3-bar ">
+                <img src="foto.jpg" alt="picture" class="w3-bar-item" style="float:left;width:340px;border:0;">
+                <span> <br><br> <br><br><br> <br><br>
+                    Hello! My name is Giacomo Nanni, I am currently a PhD student under the joint supervision of
+                    Christian Lehn, Ruhr Universität Bochum, and
+                    Giovanni Mongardi, Università di Bologna.
+
+                    My research is focused on irreducible holomorphic symplectic varieties.
+
+                    Here you can find my CV.
+                </span>
+            </div>
+
+            <!-- Ricerca/Pubblicazioni -->
+            <div class="w3-container" style="margin-top:30px" id="research">
+                <h1 class="w3-xlarge w3-text-theme"><b>Research</b></h1>
+
+                <strong>Upcoming talks</strong><br>
+
+                <hr>
+
+                <strong>Past talks</strong><br>
+
+
+
+                <!-- "More..." button -->
+                <span id="showMoreBtn">More...</span>
+
+                <hr>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const talksList = document.querySelectorAll('#talks-list li');
+                        const showMoreBtn = document.getElementById('showMoreBtn');
+
+                        // Show only the first 3 list items
+                        talksList.forEach((item, index) => {
+                            if (index > 2) {
+                                item.style.display = 'none';
+                            }
+                        });
+
+                        // Event listener for the "More..." button
+                        showMoreBtn.addEventListener('click', function () {
+                            talksList.forEach((item, index) => {
+                                if (index > 2) {
+                                    item.style.display = 'list-item';
+                                }
+                            });
+                            // Hide the "More..." button after clicking
+                            showMoreBtn.style.display = 'none';
+                        });
+                    });
+                </script>
+
+                <strong>Some links</strong><br>
+
+
+            </div>
+
+
+
+
+            <!-- Teaching -->
+            <div class="w3-container" id="teaching" style="margin-top:30px">
+                <h1 class="w3-xlarge w3-text-theme "><b>Teaching</b></h1>
+
+            </div>
+
+            <!-- Contact -->
+            <div class="w3-container" style="margin-top:30px" id="contact">
+                <h1 class="w3-xlarge w3-text-theme"><b>Contact</b></h1>
+                <hr>
+                <p><strong>Email:</strong> <i class="w3-text-theme">giacomo.nanni.math[at] gmail [dot] com </i>
+                </p>
+                <hr>
+                <p><strong>Address:</strong>
+
+
+                </p>
+            </div>
+
+
+
+
+
+        </div>
+    </div><gfw-dzsysafmqdeu><template shadowrootmode="closed"></template></gfw-dzsysafmqdeu>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+% Modified CV code with uniformized date format (MM.YYYY)
+
+\documentclass{moderncv} 
+\usepackage[pdfborderstyle={/S/U/W 1},unicode]{hyperref}
+
+% moderncv themes
+\moderncvcolor{blue}
+\moderncvstyle{classic}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+\makeatletter
+\let\myemaillink\emaillink
+\let\myemailsymbol\emailsymbol
+\renewcommand{\emaillink}[1]{#1}
+\renewcommand{\emailsymbol}{}
+\email{
+  \myemailsymbol \myemaillink{giacomo.nann13@unibo.it}
+  \\
+  \myemailsymbol \myemaillink{giacomo.nanni.math@gmail.com}\\
+}
+
+\name{Giacomo}{Nanni}
+\title{\emph{Curriculum Vitae}}
+%\email{giacomo.nanni13@unibo.it}
+%\email{giacomo.nanni.math@gmail.com}
+\homepage{www.unibo.it/sitoweb/giacomo.nanni13}
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+
+\begin{document}
+
+\makecvtitle
+
+% --------------
+%        EDUCATION
+% --------------
+\section{Education}
+\bigskip
+
+\cventry{2023 - present}{PhD student}{}{}{in cotutelle between \emph{Alma Mater Studiorum - Università di Bologna} (AMS) Bologna, Italy and \emph{Ruhr-Universität} (RUB), Bochum, Germany}{
+    \begin{itemize}
+        \item Working title: Lagrangian fibrations of Nikulin orbifolds
+        \item Supervisors: \href{https://www.unibo.it/sitoweb/giovanni.mongardi2/}{Giovanni Mongardi (AMS)}, \href{https://math.ruhr-uni-bochum.de/fakultaet/arbeitsbereiche/analysis/gruppe-lehn/}{Christian Lehn (RUB)}
+    \end{itemize}
+}
+
+\cventry{2020-2023}{MSc Mathematics}{AMS}{}{Bologna, Italy}{
+    \begin{itemize}
+        \item Thesis title: Classification of lagrangian planes in Kummer-type hyperkähler manifolds
+        \item Supervisor: \href{https://www.unibo.it/sitoweb/giovanni.mongardi2/}{Giovanni Mongardi}
+        \item Examiner: \href{https://www.unibo.it/sitoweb/luca.migliorini/}{Luca Migliorini}
+        \item Assessment: 110/110 cum laude
+    \end{itemize}
+}
+
+\cventry{A.Y. 2021-2022}{M2 Mathématiques fondamentales}{Université de Paris}{ }{Paris, France}{}
+
+\cventry{2017-2020}{BSc Mathematics}{AMS}{}{Bologna, Italy}{
+    \begin{itemize}
+        \item Thesis title: Varietà di Segre e di Veronese
+        \item Supervisor: \href{https://www.unibo.it/sitoweb/monica.ida/}{Monica Idà}
+        \item Assessment: 110/100 cum laude
+    \end{itemize}
+}
+
+% --------------
+%       PUBLICATIONS
+% --------------
+\section{Publications}
+\subsection{Preprints}
+\cvlistitem{Giacomo Nanni. \textit{Classification of lagrangian planes in Kummer-type hyperkähler manifolds}. \href{https://arxiv.org/abs/2310.15639}{arXiv:2310.15639}}
+\cvlistitem{Giacomo Nanni. \textit{Monodromy of Nikulin orbifolds}. \href{https://doi.org/10.48550/arXiv.2503.14441}{arXiv:2503.14441}}
+
+% --------------
+%       TALKS AND POSTERS
+% --------------
+\section{Talks and Posters}
+\cventry{10.2025}{Oberseminar Algebraische und Komplexe Geometrie}{RUB}{Bochum}{Germany}{}
+\cventry{06.2025}{Poster at \href{https://sites.google.com/view/gaelxxxii}{Gael XXXII}}{}{Toulouse}{France}{}
+\cventry{03.2025}{Talk at \href{https://sites.google.com/view/mathphd-openday-bologna/home}{PhD Open Day}}{}{Bologna}{Italy}{}
+\cventry{11.2023}{Talk at the University of North Carolina}{}{Chapel Hill}{USA}{}
+\cventry{09.2024}{Poster at \href{https://matematica.unimi.it/it/ricercatori-algebra-e-geometria-2024}{Ricercatori in algebra e geometria}}{}{Milano}{Italy}{}
+\cventry{-}{Poster at \href{https://sites.google.com/view/og65/home}{New perspectives on hyperkähler manifolds}}{}{Cetraro}{Italy}{}
+\cventry{03.2024}{Junior talk at \href{https://sites.google.com/view/geoalgcompluff/legal/legal-english}{LEGAL}}{}{Teresópolis, Rio de Janeiro}{Brazil}{}
+
+% --------------
+%       RESEARCH VISITS
+% --------------
+\section{Research visits}
+\cventry{04.11.2024-24.11.2024}{University of North Carolina}{}{Chapel Hill}{USA}{Invited by \href{https://sawon.web.unc.edu/}{Justin Sawon}}
+
+% --------------
+%          TEACHING
+% --------------
+\section{Teaching}
+\subsection{Tutor (Teaching Assistant) for the following courses}
+
+\cventry{A.Y. 2024-2025}{Aritmetica e Gruppi, BSc in Mathematics}{AMS}{Bologna}{Italy}{Supervisors: \href{https://www.unibo.it/sitoweb/a.dandrea}{Alessandro D'Andrea}, \href{https://www.unibo.it/sitoweb/jacopo.gandini/}{Jacopo Gandini}}
+
+\cventry{-}{Geometria 2 (Topology), BSc in Mathematics}{AMS}{Bologna}{Italy}{Supervisor: \href{https://www.unibo.it/sitoweb/giovanni.mongardi2/}{Giovanni Mongardi}}
+
+\cventry{A.Y. 2023-2024}{Algebra e Geometria (Linear Algebra), BSc in Physics}{AMS}{Bologna}{Italy}{Supervisor: \href{https://www.unibo.it/sitoweb/alessia.cattabriga/}{Alessia Cattabriga}}
+
+\cventry{-}{Algebra 1, BSc in Mathematics}{AMS}{Bologna}{Italy}{Supervisor: \href{https://www.dm.unibo.it/~luca.moci2/}{Luca Moci}}
+
+\cventry{-}{Algebra 2, BSc in Mathematics}{AMS}{Bologna}{Italy}{Supervisor: \href{https://www.unibo.it/sitoweb/fabrizio.caselli/}{Fabrizio Caselli}}
+
+\cventry{-}{Geometria 2 (Topology), BSc in Mathematics}{AMS}{Bologna}{Italy}{Supervisor: \href{https://www.unibo.it/sitoweb/giovanni.mongardi2/}{Giovanni Mongardi}}
+
+\cventry{A.Y. 2022-2023}{Algebra e Geometria (Linear Algebra), BSc in Physics}{AMS}{Bologna}{Italy}{Supervisor: \href{https://www.unibo.it/sitoweb/alessia.cattabriga/}{Alessia Cattabriga}}
+
+\subsection{Private Teaching}
+\cventry{-}{Mathematics tutoring}{}{}{}{Sporadic private teaching to school and undergraduate students}
+
+% --------------
+%         LANGUAGES
+% --------------
+\section{Languages}
+I'm a native \emph{Italian} speaker, and I consider myself fluent in \emph{English} and \emph{French}.
+
+% --------------
+%         REFERENCES
+% --------------
+%\newpage
+\section{References}
+
+\begin{cvcolumns}
+    \cvcolumn{\href{https://www.unibo.it/sitoweb/giovanni.mongardi2/}{Giovanni Mongardi}}{Professor\\Mathematics Dept., AMS\\Bologna, Italy\\\href{mailto:giovanni.mongardi2@unibo.it}{\emailsymbol giovanni.mongardi2@unibo.it}}
+    \cvcolumn{\href{https://math.ruhr-uni-bochum.de/fakultaet/arbeitsbereiche/analysis/gruppe-lehn/}{Christian Lehn}}{Professor\\Mathematics Dept., RUB\\Bochum, Germany\\\href{mailto:christian.lehn@rub.de}{\emailsymbol christian.lehn@rub.de}}
+\end{cvcolumns}
+
+\begin{cvcolumns}
+    \cvcolumn{\href{https://www.unibo.it/sitoweb/luca.migliorini/}{Luca Migliorini}}{Professor\\Mathematics Dept., AMS\\Bologna, Italy\\\href{mailto:luca.migliorini@unibo.it}{\emailsymbol luca.migliorini@unibo.it}}
+    \cvcolumn{\href{https://sites.google.com/view/enricofatighenti/home}{Enrico Fatighenti}}{Researcher\\Mathematics Dept., AMS\\Bologna, Italy\\\href{mailto:enrico.fatighenti@unibo.it}{\emailsymbol enrico.fatighenti@unibo.it}}
+\end{cvcolumns}
+
+\end{document}

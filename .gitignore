@@ -1,0 +1,46 @@
+
+# Auxiliary and intermediate files
+*.aux
+*.log
+*.lof
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.idx
+*.ilg
+*.ind
+*.inx
+*.lbx
+*.mtc
+*.mtc0
+*.maf
+
+# LatexMK and Tectonic
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+*.fls
+*.latexmk
+
+# Bibliography
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# Misc editors / tools
+*~
+*.swp
+*.tmp
+*.bak
+
+# MacOS Finder files
+.DS_Store
+
+# VSCode settings (optional but recommended)
+.vscode/
