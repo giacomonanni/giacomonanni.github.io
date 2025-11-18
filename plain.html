@@ -26,10 +26,12 @@
             z-index: 1000;
         }
 
+        /* Move menu items down so they don't overlap the menu toggle */
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 60px 0 0 0;
+            /* <-- space added */
         }
 
         nav ul li {
@@ -88,7 +90,12 @@
             left: 0;
         }
 
-        /* Hamburger transform */
+        /* Make the "X" visible when open */
+        #nav-toggle:checked+.menu-toggle .bar {
+            background-color: white !important;
+        }
+
+        /* X transformation */
         #nav-toggle:checked+.menu-toggle .bar:nth-child(1) {
             transform: rotate(-45deg) translate(-5px, 6px);
         }
@@ -145,10 +152,6 @@
 
         #teaching {
             background-color: #d0d0d0;
-        }
-
-        #contact {
-            background-color: #c0c0c0;
         }
 
         /* About section layout with photo */
@@ -217,7 +220,6 @@
 
             <li><a href="#teaching">Teaching</a></li>
             <li><a href="cv.pdf" target="_blank">CV</a></li>
-            <!--  <li><a href="#contact">Contact</a></li>-->
         </ul>
     </nav>
 
@@ -225,28 +227,30 @@
 
         <!-- ABOUT -->
         <section id="about">
-
             <h1>Giacomo Nanni</h1>
 
             <div class="about-container">
                 <img src="photo.jpg" alt="Photo of Giacomo Nanni">
-
 
                 <div class="about-text">
                     <p>
                         Hi! I am a PhD student in a cotutelle program between Alma Mater Studiorum – Università di
                         Bologna
                         (Italy) and Ruhr-Universität Bochum (Germany), under the supervision of Christian Lehn and
-                        Giovanni Mongardi. </p>
-                    <p> My research lies in algebraic and complex
-                        geometry, focused especially on hyperkähler manifolds, Lagrangian fibrations, and Nikulin
-                        orbifolds.
+                        Giovanni Mongardi.
                     </p>
-                    <p> Here is my <a href="cv.pdf" target="_blank">CV</a></p>
+
+                    <p>
+                        My research lies in algebraic and complex geometry, focused especially on hyperkähler manifolds,
+                        Lagrangian fibrations, and Nikulin orbifolds.
+                    </p>
+
+                    <p>Here is my <a href="cv.pdf" target="_blank">CV</a>.</p>
+
                     <h2>Contact</h2>
 
                     <ul>
-                        <li>Email: giacomo.nanni13@unibo.it</li>
+                        <li>Email: giacomo.nann13@unibo.it</li>
                         <li>Email: giacomo.nanni.math@gmail.com</li>
                         <li>Institutional website: www.unibo.it/sitoweb/giacomo.nanni13</li>
                     </ul>
@@ -283,19 +287,15 @@
             <ul>
                 <li>
                     <strong>Monodromy of Nikulin orbifolds</strong><br>
-                    <a href=" https://doi.org/10.48550/arXiv.2503.14441"> arXiv:2503.14441</a>
+                    <a href=" https://doi.org/10.48550/arXiv.2503.14441">arXiv:2503.14441</a>
                 </li>
+
                 <li>
                     <strong>Classification of Lagrangian planes in Kummer-type hyperkähler manifolds</strong><br>
                     <a href="https://doi.org/10.48550/arXiv.2310.15639">arXiv:2310.15639</a>
                 </li>
-
-
             </ul>
-            <!--
-            <h3>Published Papers</h3>
-            <p><em>None yet.</em></p>
--->
+
             <!-- Talks -->
             <h2 id="talks">Talks & Posters</h2>
             <ul>
@@ -304,7 +304,7 @@
                 <li>Talk at PhD Open Day, Bologna (03.2025)</li>
                 <li>Talk at University of North Carolina, Chapel Hill (11.2023)</li>
                 <li>Poster, Ricercatori in algebra e geometria, Milano (09.2024)</li>
-                <li>Poster at <em>New perspectives on hyperkähler manifolds</em>, Cetraro</li>
+                <li>Poster at <em>New perspectives on hyperkähler manifolds</em>, Cetraro (09.2024)</li>
                 <li>Junior talk at LEGAL, Rio de Janeiro (03.2024)</li>
             </ul>
         </section>
@@ -334,26 +334,6 @@
             </ul>
 
         </section>
-
-        <!-- CONTACT 
-        <section id="contact">
-            <h1>Contact</h1>
-
-            <ul>
-                <li>Email: giacomo.nann13@unibo.it</li>
-                <li>Email: giacomo.nanni.math@gmail.com</li>
-                <li>Website: www.unibo.it/sitoweb/giacomo.nanni13</li>
-            </ul>
-
-            <p>
-                Fakultät für Mathematik<br>
-                Building IB, office 3/91<br>
-                Ruhr University Bochum<br>
-                Universitätsstrasse 150<br>
-                44801 Bochum, Germany
-            </p>
-        </section>
-        -->
 
     </main>
 
