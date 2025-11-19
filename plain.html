@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giacomo Nanni – Personal Page</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Computer Modern", serif;
+            /*font-family: Arial, serif;*/
             overflow-x: hidden;
         }
 
@@ -192,6 +194,20 @@
                 display: none !important;
             }
         }
+
+        .decoy {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            /* Removes the underline */
+        }
+
+        a:hover {
+            background-color: yellow;
+            /* Adds a highlight on hover; adjust color as needed */
+        }
     </style>
 </head>
 
@@ -219,7 +235,7 @@
             <li class="sub"><a href="#talks">— Talks & Posters</a></li>
 
             <li><a href="#teaching">Teaching</a></li>
-            <li><a href="cv.pdf" target="_blank">CV</a></li>
+            <li><a href="resources/cv.pdf" target="_blank">CV</a></li>
         </ul>
     </nav>
 
@@ -230,14 +246,16 @@
             <h1>Giacomo Nanni</h1>
 
             <div class="about-container">
-                <img src="photo.jpg" alt="Photo of Giacomo Nanni">
+                <img src="resources/photo.jpg" alt="Photo of Giacomo Nanni">
 
                 <div class="about-text">
                     <p>
                         Hi! I am a PhD student in a cotutelle program between Alma Mater Studiorum – Università di
                         Bologna
-                        (Italy) and Ruhr-Universität Bochum (Germany), under the supervision of Christian Lehn and
-                        Giovanni Mongardi.
+                        (Italy) and Ruhr-Universität Bochum (Germany), under the supervision of <a
+                            href="https://math.ruhr-uni-bochum.de/fakultaet/arbeitsbereiche/analysis/gruppe-lehn/">Christian
+                            Lehn</a> and <a href="https://www.unibo.it/sitoweb/giovanni.mongardi2">Giovanni Mongardi</a>
+                        .
                     </p>
 
                     <p>
@@ -245,14 +263,18 @@
                         Lagrangian fibrations, and Nikulin orbifolds.
                     </p>
 
-                    <p>Here is my <a href="cv.pdf" target="_blank">CV</a>.</p>
+                    <p>Here is my <a href="resources/cv.pdf" target="_blank">CV</a>.</p>
 
                     <h2>Contact</h2>
 
                     <ul>
-                        <li>Email: giacomo.nann13@unibo.it</li>
-                        <li>Email: giacomo.nanni.math@gmail.com</li>
-                        <li>Institutional website: www.unibo.it/sitoweb/giacomo.nanni13</li>
+                        <li>Email: giaco<span class="decoy">make it</span>mo.nanni1<span
+                                class="decoy">harder</span>3<span class="decoy">fake</span>@unibo.it</li>
+                        <li>Email: giac<span class="decoy">random</span>omo.nanni.ma<span
+                                class="decoy">junk</span>th@gmail.com</li>
+                        <li>Institutional website: <a
+                                href="https://www.unibo.it/sitoweb/giacomo.nanni13">www.unibo.it/sitoweb/giacomo.nanni13</a>
+                        </li>
                     </ul>
 
                     <p>
@@ -299,20 +321,20 @@
             <!-- Talks -->
             <h2 id="talks">Talks & Posters</h2>
             <ul>
-                <li>Oberseminar Algebraische und Komplexe Geometrie, Bochum (10.2025)</li>
-                <li>Poster at GAEL XXXII, Toulouse (06.2025)</li>
+                <li>Talk at <em>Oberseminar Algebraische und Komplexe Geometrie</em>, Bochum (10.2025)</li>
+                <li>Poster at <em>GAEL XXXII</em>, Toulouse (06.2025)</li>
                 <li>Talk at PhD Open Day, Bologna (03.2025)</li>
                 <li>Talk at University of North Carolina, Chapel Hill (11.2023)</li>
-                <li>Poster, Ricercatori in algebra e geometria, Milano (09.2024)</li>
+                <li>Poster, <em>Ricercatori in algebra e geometria</em>, Milano (09.2024)</li>
                 <li>Poster at <em>New perspectives on hyperkähler manifolds</em>, Cetraro (09.2024)</li>
-                <li>Junior talk at LEGAL, Rio de Janeiro (03.2024)</li>
+                <li>Junior talk at <em>LEGAL</em>, Rio de Janeiro (03.2024)</li>
             </ul>
         </section>
 
         <!-- TEACHING -->
         <section id="teaching">
             <h1>Teaching</h1>
-            Tutor for the courses of the Alma Mater Studiorum - Università di Bologna:
+            I am tutor for some courses of the Alma Mater Studiorum - Università di Bologna:
 
             <h3>2024–2025</h3>
             <ul>
