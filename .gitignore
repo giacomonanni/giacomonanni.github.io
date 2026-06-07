@@ -43,4 +43,4 @@
 .DS_Store
 
 # VSCode settings (optional but recommended)
-.vscode/
+#.vscode/
