@@ -1,0 +1,108 @@
+{
+  "articles": [
+    {
+      "title": "Lagrangian fibrations on Nikulin-type orbifolds",
+      "arxiv": "2512.19244",
+      "year": 2025,
+      "status": "preprint",
+      "venue": null
+    },
+    {
+      "title": "Monodromy of Nikulin orbifolds",
+      "arxiv": "2503.14441",
+      "year": 2025,
+      "status": "accepted",
+      "venue": "Kyoto Journal of Mathematics"
+    },
+    {
+      "title": "Classification of Lagrangian planes in Kummer-type hyperk\u00e4hler manifolds",
+      "arxiv": "2310.15639",
+      "year": 2023,
+      "status": "accepted",
+      "venue": "Mathematische Zeitschrift"
+    }
+  ],
+  "talks": [
+    {
+      "date": "2026-04",
+      "kind": "Talk",
+      "event": "Seminarium Geometria Algebraiczna",
+      "event_link": null,
+      "institution": "Uniwersytetu Jagiello\u0144skiego",
+      "city": "Krakow",
+      "country": "Poland"
+    },
+    {
+      "date": "2026-02",
+      "kind": "Talk",
+      "event": "S\u00e9minaire de G\u00e9om\u00e9trie complexe",
+      "event_link": null,
+      "institution": "Institut Elie-Cartan",
+      "city": "Nancy",
+      "country": "France"
+    },
+    {
+      "date": "2025-10",
+      "kind": "Talk",
+      "event": "Oberseminar Algebraische und Komplexe Geometrie",
+      "event_link": null,
+      "institution": "Ruhr-Universit\u00e4t",
+      "city": "Bochum",
+      "country": "Germany"
+    },
+    {
+      "date": "2025-06",
+      "kind": "Poster",
+      "event": "GAEL XXXII",
+      "event_link": "https://sites.google.com/view/gaelxxxii",
+      "institution": "",
+      "city": "Toulouse",
+      "country": "France"
+    },
+    {
+      "date": "2025-03",
+      "kind": "Talk",
+      "event": "PhD Open Day",
+      "event_link": "https://sites.google.com/view/mathphd-openday-bologna/home",
+      "institution": "",
+      "city": "Bologna",
+      "country": "Italy"
+    },
+    {
+      "date": "2024-11",
+      "kind": "Talk",
+      "event": "Geometric Methods in Representation Theory",
+      "event_link": null,
+      "institution": "University of North Carolina",
+      "city": "Chapel Hill",
+      "country": "USA"
+    },
+    {
+      "date": "2024-09",
+      "kind": "Poster",
+      "event": "Ricercatori in algebra e geometria",
+      "event_link": "https://matematica.unimi.it/it/ricercatori-algebra-e-geometria-2024",
+      "institution": "",
+      "city": "Milano",
+      "country": "Italy"
+    },
+    {
+      "date": "2024-09",
+      "kind": "Poster",
+      "event": "New perspectives on hyperk\u00e4hler manifolds",
+      "event_link": "https://sites.google.com/view/og65/home",
+      "institution": "",
+      "city": "Cetraro",
+      "country": "Italy"
+    },
+    {
+      "date": "2024-03",
+      "kind": "Junior talk",
+      "event": "LEGAL",
+      "event_link": "https://sites.google.com/view/geoalgcompluff/legal/legal-english",
+      "institution": "",
+      "city": "Teres\u00f3polis, Rio de Janeiro",
+      "country": "Brazil"
+    }
+  ]
+}
