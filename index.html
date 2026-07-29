@@ -3,8 +3,9 @@
 
 <head>
     <meta name="google-site-verification" content="ThIcFfAk9_an7HPXnbIgXpJIYaaP2lof4nhaQBa8RAE" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
-
+    <!--
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">-->
+    <link rel="stylesheet" type="text/css" href="resources/fonts/cm-serif.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giacomo Nanni – Personal Page</title>
     <style>
@@ -209,6 +210,29 @@
             background-color: rgba(12, 93, 7, 0.297);
             /* Adds a highlight on hover; adjust color as needed */
         }
+
+        .travel-list {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            column-gap: 20px;
+            row-gap: 0px;
+            margin: 0;
+            padding-left: 40px;
+        }
+
+        .travel-item {
+            display: contents;
+        }
+
+        .travel-list dt {
+            font-weight: bold;
+            white-space: nowrap;
+            color: #333;
+        }
+
+        .travel-list dd {
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -287,6 +311,31 @@
                     </p>
                 </div>
             </div>
+            <div>
+                <h2>Where I will be</h2>
+                <dl class="travel-list">
+                    <div class="travel-item">
+                        <dt>31.08 – 04.09</dt>
+                        <dd>Participant at <a href="https://sites.unimi.it/jes/"><em>Japanese-European Symposium on
+                                    Symplectic Varieties and Moduli Spaces</em></a>, Sapporo, Japan</dd>
+                    </div>
+                    <div class="travel-item">
+                        <dt>05.09 – 31.10</dt>
+                        <dd>Guest at <a href="https://www.kurims.kyoto-u.ac.jp/en/index.html">Research Institute for
+                                Mathematical Sciences</a>, Kyoto University, Japan</dd>
+                    </div>
+                    <div class="travel-item">
+                        <dt>23.11 – 26.11</dt>
+                        <dd>Participant at <a href="https://indico.math.cnrs.fr/event/16870/"><em>Workshop POK0
+                                    "Positivity on K-trivial varieties"</em></a>, Nice, France</dd>
+                    </div>
+                    <div class="travel-item">
+                        <dt>26.11</dt>
+                        <dd>Invited speaker at <a href="https://indico.math.cnrs.fr/category/686/">Seminaire Algèbre,
+                                géométrie, topologie</a>, Nice, France</dd>
+                    </div>
+                </dl>
+            </div>
         </section>
 
         <!-- RESEARCH -->
@@ -298,8 +347,8 @@
             <p>My interests include:</p>
             <ul>
                 <li>Hyperkähler manifolds</li>
-                <li>Lagrangian fibrations</li>
-                <li>Nikulin orbifolds</li>
+                <li>Singular symplectic varieties</li>
+                <li>Moduli spaces (of coherent sheaves, Bridgeland stable objects...)</li>
                 <li>Algebraic and complex geometry in a broad sense</li>
             </ul>
 
@@ -308,7 +357,7 @@
 
             <h3>Preprints</h3>
             <ul>
-<!-- PUBLICATIONS:START -->
+                <!-- PUBLICATIONS:START -->
                 <li>
                     <strong>Lagrangian fibrations on Nikulin-type orbifolds</strong> (2025)<br>
                     <a href="https://arxiv.org/abs/2512.19244">arXiv:2512.19244</a>
@@ -316,12 +365,14 @@
 
                 <li>
                     <strong>Monodromy of Nikulin orbifolds</strong> (2025)<br>
-                    <a href="https://arxiv.org/abs/2503.14441">arXiv:2503.14441</a> (Soon to appear in <em>Kyoto Journal of Mathematics</em>)
+                    <a href="https://arxiv.org/abs/2503.14441">arXiv:2503.14441</a> (Soon to appear in <em>Kyoto Journal
+                        of Mathematics</em>)
                 </li>
 
                 <li>
                     <strong>Classification of Lagrangian planes in Kummer-type hyperkähler manifolds</strong> (2023)<br>
-                    <a href="https://arxiv.org/abs/2310.15639">arXiv:2310.15639</a> (Soon to appear in <em>Mathematische Zeitschrift</em>)
+                    <a href="https://arxiv.org/abs/2310.15639">arXiv:2310.15639</a> (Soon to appear in <em>Mathematische
+                        Zeitschrift</em>)
                 </li>
                 <!-- PUBLICATIONS:END -->
             </ul>
@@ -329,16 +380,26 @@
             <!-- Talks -->
             <h2 id="talks">Talks & Posters</h2>
             <ul>
-<!-- TALKS:START -->
-                <li>Talk at <em>Seminarium Geometria Algebraiczna</em>, Uniwersytetu Jagiellońskiego, Krakow, Poland (04.2026)</li>
+                <!-- TALKS:START -->
+                <li>Talk at <em>Seminarium Geometria Algebraiczna</em>, Uniwersytetu Jagiellońskiego, Krakow, Poland
+                    (04.2026)</li>
                 <li>Talk at <em>Séminaire de Géométrie complexe</em>, Institut Elie-Cartan, Nancy, France (02.2026)</li>
-                <li>Talk at <em>Oberseminar Algebraische und Komplexe Geometrie</em>, Ruhr-Universität, Bochum, Germany (10.2025)</li>
-                <li>Poster at <em><a href="https://sites.google.com/view/gaelxxxii">GAEL XXXII</a></em>, Toulouse, France (06.2025)</li>
-                <li>Talk at <em><a href="https://sites.google.com/view/mathphd-openday-bologna/home">PhD Open Day</a></em>, Bologna, Italy (03.2025)</li>
-                <li>Talk at <em>Geometric Methods in Representation Theory</em>, University of North Carolina, Chapel Hill, USA (11.2024)</li>
-                <li>Poster at <em><a href="https://matematica.unimi.it/it/ricercatori-algebra-e-geometria-2024">Ricercatori in algebra e geometria</a></em>, Milano, Italy (09.2024)</li>
-                <li>Poster at <em><a href="https://sites.google.com/view/og65/home">New perspectives on hyperkähler manifolds</a></em>, Cetraro, Italy (09.2024)</li>
-                <li>Junior talk at <em><a href="https://sites.google.com/view/geoalgcompluff/legal/legal-english">LEGAL</a></em>, Teresópolis, Rio de Janeiro, Brazil (03.2024)</li>
+                <li>Talk at <em>Oberseminar Algebraische und Komplexe Geometrie</em>, Ruhr-Universität, Bochum, Germany
+                    (10.2025)</li>
+                <li>Poster at <em><a href="https://sites.google.com/view/gaelxxxii">GAEL XXXII</a></em>, Toulouse,
+                    France (06.2025)</li>
+                <li>Talk at <em><a href="https://sites.google.com/view/mathphd-openday-bologna/home">PhD Open
+                            Day</a></em>, Bologna, Italy (03.2025)</li>
+                <li>Talk at <em>Geometric Methods in Representation Theory</em>, University of North Carolina, Chapel
+                    Hill, USA (11.2024)</li>
+                <li>Poster at <em><a
+                            href="https://matematica.unimi.it/it/ricercatori-algebra-e-geometria-2024">Ricercatori in
+                            algebra e geometria</a></em>, Milano, Italy (09.2024)</li>
+                <li>Poster at <em><a href="https://sites.google.com/view/og65/home">New perspectives on hyperkähler
+                            manifolds</a></em>, Cetraro, Italy (09.2024)</li>
+                <li>Junior talk at <em><a
+                            href="https://sites.google.com/view/geoalgcompluff/legal/legal-english">LEGAL</a></em>,
+                    Teresópolis, Rio de Janeiro, Brazil (03.2024)</li>
                 <!-- TALKS:END -->
             </ul>
         </section>
