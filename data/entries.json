@@ -27,7 +27,7 @@
       "date": "2026-04",
       "kind": "Talk",
       "event": "Seminarium Geometria Algebraiczna",
-      "event_link": null,
+      "event_link": "https://kgatl.im.uj.edu.pl/index_pl.php",
       "institution": "Uniwersytetu Jagiello\u0144skiego",
       "city": "Krakow",
       "country": "Poland"
@@ -36,7 +36,7 @@
       "date": "2026-02",
       "kind": "Talk",
       "event": "S\u00e9minaire de G\u00e9om\u00e9trie complexe",
-      "event_link": null,
+      "event_link": "https://iecl.univ-lorraine.fr/events/lagrangian-fibrations-on-nikulin-orbifold/",
       "institution": "Institut Elie-Cartan",
       "city": "Nancy",
       "country": "France"
@@ -45,7 +45,7 @@
       "date": "2025-10",
       "kind": "Talk",
       "event": "Oberseminar Algebraische und Komplexe Geometrie",
-      "event_link": null,
+      "event_link": "https://cecilegachet.github.io/events.html",
       "institution": "Ruhr-Universit\u00e4t",
       "city": "Bochum",
       "country": "Germany"
@@ -72,7 +72,7 @@
       "date": "2024-11",
       "kind": "Talk",
       "event": "Geometric Methods in Representation Theory",
-      "event_link": null,
+      "event_link": "https://math.unc.edu/event/geometric-methods-in-representation-theory-giacomo-nanni-universita-di-bologna/",
       "institution": "University of North Carolina",
       "city": "Chapel Hill",
       "country": "USA"
