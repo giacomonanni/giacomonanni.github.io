@@ -233,6 +233,37 @@
         .travel-list dd {
             margin: 0;
         }
+
+        /* Highlighted link to talk notes */
+        .talk-banner {
+            display: block;
+            margin: 0 0 24px 0;
+            padding: 14px 20px;
+            border-left: 6px solid #b03a2e;
+            border-radius: 6px;
+            background-color: #fdf0ee;
+            color: #222;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .talk-banner:hover {
+            background-color: #f9e0dc;
+        }
+
+        .talk-banner-label {
+            display: block;
+            font-size: 15px;
+            color: #b03a2e;
+            font-weight: bold;
+        }
+
+        .talk-banner-title {
+            display: block;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
     </style>
 </head>
 
@@ -269,6 +300,12 @@
         <!-- ABOUT -->
         <section id="about">
             <h1>Giacomo Nanni</h1>
+
+            <!-- Highlighted link to the notes of the latest talk -->
+            <a class="talk-banner" href="kyoto/">
+                <span class="talk-banner-label">Notes for my talk in Kyoto (2 October 2026)</span>
+                <span class="talk-banner-title">Lagrangian fibrations on Nikulin orbifolds &rarr;</span>
+            </a>
 
             <div class="about-container">
                 <img src="resources/photo.jpg" alt="Photo of Giacomo Nanni">
@@ -322,11 +359,6 @@
                 <h2>Where I will be</h2>
                 <dl class="travel-list">
                     <div class="travel-item">
-                        <dt>31.08 – 04.09</dt>
-                        <dd>Participant at <a href="https://sites.unimi.it/jes/"><em>Japanese-European Symposium on
-                                    Symplectic Varieties and Moduli Spaces</em></a>, Sapporo, Japan</dd>
-                    </div>
-                    <div class="travel-item">
                         <dt>05.09 – 31.10</dt>
                         <dd>Guest at <a href="https://www.kurims.kyoto-u.ac.jp/en/index.html">Research Institute for
                                 Mathematical Sciences</a>, Kyoto University, Japan</dd>
@@ -373,14 +405,12 @@
 
                 <li>
                     <strong>Monodromy of Nikulin orbifolds</strong> (2025)<br>
-                    <a href="https://arxiv.org/abs/2503.14441">arXiv:2503.14441</a> (Soon to appear in <em>Kyoto Journal
-                        of Mathematics</em>)
+                    <a href="https://arxiv.org/abs/2503.14441">arXiv:2503.14441</a> (Soon to appear in <em>Kyoto Journal of Mathematics</em>)
                 </li>
 
                 <li>
                     <strong>Classification of Lagrangian planes in Kummer-type hyperkähler manifolds</strong> (2023)<br>
-                    <a href="https://arxiv.org/abs/2310.15639">arXiv:2310.15639</a> (Soon to appear in <em>Mathematische
-                        Zeitschrift</em>)
+                    <a href="https://arxiv.org/abs/2310.15639">arXiv:2310.15639</a> (Soon to appear in <em>Mathematische Zeitschrift</em>)
                 </li>
                 <!-- PUBLICATIONS:END -->
             </ul>
@@ -389,29 +419,16 @@
             <h2 id="talks">Talks & Posters</h2>
             <ul>
                 <!-- TALKS:START -->
-                <li>Talk at <em><a href="https://kgatl.im.uj.edu.pl/index_pl.php">Seminarium Geometria
-                            Algebraiczna</a></em>, Uniwersytetu Jagiellońskiego, Krakow, Poland (04.2026)</li>
-                <li>Talk at <em><a
-                            href="https://iecl.univ-lorraine.fr/events/lagrangian-fibrations-on-nikulin-orbifold/">Séminaire
-                            de Géométrie complexe</a></em>, Institut Elie-Cartan, Nancy, France (02.2026)</li>
-                <li>Talk at <em><a href="https://cecilegachet.github.io/events.html">Oberseminar Algebraische und
-                            Komplexe Geometrie</a></em>, Ruhr-Universität, Bochum, Germany (10.2025)</li>
-                <li>Poster at <em><a href="https://sites.google.com/view/gaelxxxii">GAEL XXXII</a></em>, Toulouse,
-                    France (06.2025)</li>
-                <li>Talk at <em><a href="https://sites.google.com/view/mathphd-openday-bologna/home">PhD Open
-                            Day</a></em>, Bologna, Italy (03.2025)</li>
-                <li>Talk at <em><a
-                            href="https://math.unc.edu/event/geometric-methods-in-representation-theory-giacomo-nanni-universita-di-bologna/">Geometric
-                            Methods in Representation Theory</a></em>, University of North Carolina, Chapel Hill, USA
-                    (11.2024)</li>
-                <li>Poster at <em><a
-                            href="https://matematica.unimi.it/it/ricercatori-algebra-e-geometria-2024">Ricercatori in
-                            algebra e geometria</a></em>, Milano, Italy (09.2024)</li>
-                <li>Poster at <em><a href="https://sites.google.com/view/og65/home">New perspectives on hyperkähler
-                            manifolds</a></em>, Cetraro, Italy (09.2024)</li>
-                <li>Junior talk at <em><a
-                            href="https://sites.google.com/view/geoalgcompluff/legal/legal-english">LEGAL</a></em>,
-                    Teresópolis, Rio de Janeiro, Brazil (03.2024)</li>
+                <li>Talk at <em><a href="https://www.math.kyoto-u.ac.jp/en/event/seminar/algebraic-geometry">Algebraic Geometry Seminar</a></em>, Kyoto University, Kyoto, Japan (10.2026) – <a href="notes/kyoto-2026.pdf">notes</a></li>
+                <li>Talk at <em><a href="https://kgatl.im.uj.edu.pl/index_pl.php">Seminarium Geometria Algebraiczna</a></em>, Uniwersytetu Jagiellońskiego, Krakow, Poland (04.2026)</li>
+                <li>Talk at <em><a href="https://iecl.univ-lorraine.fr/events/lagrangian-fibrations-on-nikulin-orbifold/">Séminaire de Géométrie complexe</a></em>, Institut Elie-Cartan, Nancy, France (02.2026)</li>
+                <li>Talk at <em><a href="https://cecilegachet.github.io/events.html">Oberseminar Algebraische und Komplexe Geometrie</a></em>, Ruhr-Universität, Bochum, Germany (10.2025)</li>
+                <li>Poster at <em><a href="https://sites.google.com/view/gaelxxxii">GAEL XXXII</a></em>, Toulouse, France (06.2025)</li>
+                <li>Talk at <em><a href="https://sites.google.com/view/mathphd-openday-bologna/home">PhD Open Day</a></em>, Bologna, Italy (03.2025)</li>
+                <li>Talk at <em><a href="https://math.unc.edu/event/geometric-methods-in-representation-theory-giacomo-nanni-universita-di-bologna/">Geometric Methods in Representation Theory</a></em>, University of North Carolina, Chapel Hill, USA (11.2024)</li>
+                <li>Poster at <em><a href="https://matematica.unimi.it/it/ricercatori-algebra-e-geometria-2024">Ricercatori in algebra e geometria</a></em>, Milano, Italy (09.2024)</li>
+                <li>Poster at <em><a href="https://sites.google.com/view/og65/home">New perspectives on hyperkähler manifolds</a></em>, Cetraro, Italy (09.2024)</li>
+                <li>Junior talk at <em><a href="https://sites.google.com/view/geoalgcompluff/legal/legal-english">LEGAL</a></em>, Teresópolis, Rio de Janeiro, Brazil (03.2024)</li>
                 <!-- TALKS:END -->
             </ul>
         </section>

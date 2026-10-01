@@ -24,6 +24,16 @@
   ],
   "talks": [
     {
+      "date": "2026-10",
+      "kind": "Talk",
+      "event": "Algebraic Geometry Seminar",
+      "event_link": "https://www.math.kyoto-u.ac.jp/en/event/seminar/algebraic-geometry",
+      "institution": "Kyoto University",
+      "city": "Kyoto",
+      "country": "Japan",
+      "notes": "notes/kyoto-2026.pdf"
+    },
+    {
       "date": "2026-04",
       "kind": "Talk",
       "event": "Seminarium Geometria Algebraiczna",
