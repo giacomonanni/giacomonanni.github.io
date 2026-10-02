@@ -51,7 +51,7 @@ def journal_ref(e, em):
         return f"To appear in {em(journal)}"
     if status == "submitted" and journal:
         return f"Submitted to {em(journal)}"
-    return f"arXiv preprint ({e['year']})"
+    return "arXiv preprint"  # the caller appends the visible arXiv link and the year
 
 
 def split_articles(data):
@@ -94,6 +94,8 @@ def tex_article(e):
         line += ref_end(e) + "\\href{https://arxiv.org/abs/" + e["arxiv"] + "}{arXiv:" + e["arxiv"] + "}"
     if e.get("doi"):
         line += ". \\href{https://doi.org/" + e["doi"] + "}{doi:" + e["doi"] + "}"
+    if e.get("status") in PREPRINT_STATUSES and not e.get("doi"):
+        line += ", \\href{https://arxiv.org/abs/" + e["arxiv"] + "}{arXiv:" + e["arxiv"] + "} (" + str(e["year"]) + ")"
     return line + ".}" if not line.endswith(".") else line + "}"
 
 
@@ -137,6 +139,8 @@ def html_article(e):
         line += ref_end(e) + f'<a href="https://arxiv.org/abs/{e["arxiv"]}">arXiv:{e["arxiv"]}</a>'
     if e.get("doi"):
         line += f'. <a href="https://doi.org/{e["doi"]}">doi:{e["doi"]}</a>'
+    if e.get("status") in PREPRINT_STATUSES and not e.get("doi"):
+        line += f', <a href="https://arxiv.org/abs/{e["arxiv"]}">arXiv:{e["arxiv"]}</a> ({e["year"]})'
     return f"                <li>{line}.</li>"
 
 

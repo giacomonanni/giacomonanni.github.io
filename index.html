@@ -167,7 +167,8 @@
             gap: 20px;
         }
 
-        .about-container img {
+        /* the profile photo only (direct child), not icons inside the text */
+        .about-container > img {
             width: 180px;
             height: auto;
             border-radius: 6px;
@@ -233,6 +234,14 @@
 
         .travel-list dd {
             margin: 0;
+        }
+
+        /* Official ORCID iD icon, sized to the text */
+        .orcid-icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            margin-right: 0.3em;
         }
 
         /* Highlighted link to talk notes */
@@ -338,6 +347,8 @@
                         <li>Institutional website: <a
                                 href="https://www.unibo.it/sitoweb/giacomo.nanni13">www.unibo.it/sitoweb/giacomo.nanni13</a>
                         </li>
+                        <li>ORCID: <a href="https://orcid.org/0009-0001-8654-9728"><img class="orcid-icon"
+                                    src="resources/icons/orcid.svg" alt="">0009-0001-8654-9728</a></li>
                     </ul>
                     <!--
                     <p>
@@ -399,7 +410,7 @@
             <h3>Preprints</h3>
             <ol>
                 <!-- PREPRINTS:START -->
-                <li><a href="https://arxiv.org/abs/2512.19244"><em>Lagrangian fibrations on Nikulin-type orbifolds</em></a>. arXiv preprint (2025).</li>
+                <li><a href="https://arxiv.org/abs/2512.19244"><em>Lagrangian fibrations on Nikulin-type orbifolds</em></a>. arXiv preprint, <a href="https://arxiv.org/abs/2512.19244">arXiv:2512.19244</a> (2025).</li>
                 <!-- PREPRINTS:END -->
             </ol>
 
