@@ -27,35 +27,57 @@ DATA_FILE = ROOT / "data" / "entries.json"
 INDEX_FILE = ROOT / "index.html"
 GEN_DIR = ROOT / "resources" / "generated"
 
-STATUS_NOTE_TEX = {
-    "submitted": "Submitted to \\emph{{{venue}}}",
-    "accepted": "Soon to appear in \\emph{{{venue}}}",
-    "published": "Published in \\emph{{{venue}}}",
-}
-
-STATUS_NOTE_HTML = {
-    "submitted": "Submitted to <em>{venue}</em>",
-    "accepted": "Soon to appear in <em>{venue}</em>",
-    "published": "Published in <em>{venue}</em>",
-}
+PREPRINT_STATUSES = ("preprint", "submitted")
 
 
 # ---------- shared helpers ----------
 
-def tex_article_note(e):
-    template = STATUS_NOTE_TEX.get(e.get("status"))
-    venue = e.get("venue")
-    if template and venue:
-        return template.format(venue=venue)
-    return None
+def journal_ref(e, em):
+    """Bibliographic line after the title, e.g. 'Math. Z. 314 (2), Art. 30 (2026)'.
+    `em` wraps the journal name (HTML <em> or LaTeX emph)."""
+    status, journal = e.get("status"), e.get("journal")
+    if status == "published" and journal:
+        ref = em(journal)
+        if e.get("volume"):
+            ref += f" {e['volume']}"
+        if e.get("issue"):
+            ref += f" ({e['issue']})"
+        if e.get("number"):
+            ref += f", {e['number']}"
+        if e.get("pub_year"):
+            ref += f" ({e['pub_year']})"
+        return ref
+    if status == "accepted" and journal:
+        return f"To appear in {em(journal)}"
+    if status == "submitted" and journal:
+        return f"Submitted to {em(journal)}"
+    return f"arXiv preprint ({e['year']})"
 
 
-def html_article_note(e):
-    template = STATUS_NOTE_HTML.get(e.get("status"))
-    venue = e.get("venue")
-    if template and venue:
-        return template.format(venue=venue)
-    return None
+def split_articles(data):
+    """Preprints (newest first) and publications (to appear first, then newest published)."""
+    arts = data.get("articles", [])
+    pre = sorted([e for e in arts if e.get("status") in PREPRINT_STATUSES], key=lambda e: e.get("year", 0), reverse=True)
+    pub = sorted([e for e in arts if e.get("status") not in PREPRINT_STATUSES],
+                 key=lambda e: (e.get("status") == "accepted", e.get("pub_year") or e.get("year", 0)), reverse=True)
+    return pre, pub
+
+
+def title_url(e):
+    return f"https://doi.org/{e['doi']}" if e.get("doi") else f"https://arxiv.org/abs/{e['arxiv']}"
+
+
+def ref_end(e):
+    """Separator after the journal reference: skip the extra full stop when it already ends with one
+    (e.g. 'To appear in Kyoto J. Math.')."""
+    ends_with_dot = e.get("status") in ("accepted", "submitted") and (e.get("journal") or "").endswith(".")
+    return " " if ends_with_dot else ". "
+
+
+def show_arxiv_link(e):
+    """Only accepted (not yet published) papers get a separate arXiv link: preprints already link
+    the title to arXiv, and published papers show their DOI instead."""
+    return e.get("status") not in PREPRINT_STATUSES and not e.get("doi")
 
 
 def talk_date_label(date_str):
@@ -66,17 +88,13 @@ def talk_date_label(date_str):
 # ---------- LaTeX generation ----------
 
 def tex_article(e):
-    note = tex_article_note(e)
-    line = (
-        f"\\cvlistitem{{ \\textit{{{e['title']}}}. "
-        f"\\href{{https://arxiv.org/abs/{e['arxiv']}}}{{arXiv:{e['arxiv']}}}"
-    )
-    if note:
-        line += f" ({note})"
+    em = lambda j: "\\emph{" + j + "}"
+    line = "\\cvlistitem{\\href{" + title_url(e) + "}{\\textit{" + e["title"] + "}}. " + journal_ref(e, em)
+    if show_arxiv_link(e):
+        line += ref_end(e) + "\\href{https://arxiv.org/abs/" + e["arxiv"] + "}{arXiv:" + e["arxiv"] + "}"
     if e.get("doi"):
-        line += f". \\href{{https://doi.org/{e['doi']}}}{{doi:{e['doi']}}}"
-    line += "}"
-    return line
+        line += ". \\href{https://doi.org/" + e["doi"] + "}{doi:" + e["doi"] + "}"
+    return line + ".}" if not line.endswith(".") else line + "}"
 
 
 def tex_talk(e):
@@ -96,7 +114,8 @@ def tex_talk(e):
 def write_latex(data):
     GEN_DIR.mkdir(parents=True, exist_ok=True)
 
-    articles_sorted = sorted(data.get("articles", []), key=lambda e: e.get("year", 0), reverse=True)
+    pre, pub = split_articles(data)
+    articles_sorted = pub + pre
     (GEN_DIR / "publications.tex").write_text(
         "\n\n".join(tex_article(e) for e in articles_sorted) + "\n", encoding="utf-8"
     )
@@ -112,16 +131,13 @@ def write_latex(data):
 # ---------- HTML generation ----------
 
 def html_article(e):
-    note = html_article_note(e)
-    note_html = f" ({note})" if note else ""
+    em = lambda j: f"<em>{j}</em>"
+    line = f'<a href="{title_url(e)}"><em>{e["title"]}</em></a>. {journal_ref(e, em)}'
+    if show_arxiv_link(e):
+        line += ref_end(e) + f'<a href="https://arxiv.org/abs/{e["arxiv"]}">arXiv:{e["arxiv"]}</a>'
     if e.get("doi"):
-        note_html += f' &ndash; <a href="https://doi.org/{e["doi"]}">doi:{e["doi"]}</a>'
-    return (
-        "                <li>\n"
-        f"                    <strong>{e['title']}</strong> ({e['year']})<br>\n"
-        f"                    <a href=\"https://arxiv.org/abs/{e['arxiv']}\">arXiv:{e['arxiv']}</a>{note_html}\n"
-        "                </li>"
-    )
+        line += f'. <a href="https://doi.org/{e["doi"]}">doi:{e["doi"]}</a>'
+    return f"                <li>{line}.</li>"
 
 
 def html_talk(e):
@@ -154,9 +170,10 @@ def replace_between(html, start_marker, end_marker, new_content):
 def write_html(data):
     html = INDEX_FILE.read_text(encoding="utf-8")
 
-    articles_sorted = sorted(data.get("articles", []), key=lambda e: e.get("year", 0), reverse=True)
-    articles_html = "\n\n".join(html_article(e) for e in articles_sorted)
-    html = replace_between(html, "<!-- PUBLICATIONS:START -->", "<!-- PUBLICATIONS:END -->", articles_html)
+    pre, pub = split_articles(data)
+    html = replace_between(html, "<!-- PREPRINTS:START -->", "<!-- PREPRINTS:END -->", "\n".join(html_article(e) for e in pre))
+    html = replace_between(html, "<!-- PUBLICATIONS:START -->", "<!-- PUBLICATIONS:END -->", "\n".join(html_article(e) for e in pub))
+    articles_sorted = pre + pub
 
     talks_sorted = sorted(data.get("talks", []), key=lambda e: e["date"], reverse=True)
     talks_html = "\n".join(html_talk(e) for e in talks_sorted)

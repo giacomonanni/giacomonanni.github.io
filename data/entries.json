@@ -4,22 +4,25 @@
       "title": "Lagrangian fibrations on Nikulin-type orbifolds",
       "arxiv": "2512.19244",
       "year": 2025,
-      "status": "preprint",
-      "venue": null
+      "status": "preprint"
     },
     {
       "title": "Monodromy of Nikulin orbifolds",
       "arxiv": "2503.14441",
       "year": 2025,
       "status": "accepted",
-      "venue": "Kyoto Journal of Mathematics"
+      "journal": "Kyoto J. Math."
     },
     {
       "title": "Classification of Lagrangian planes in generalised Kummer manifolds",
       "arxiv": "2310.15639",
       "year": 2023,
       "status": "published",
-      "venue": "Mathematische Zeitschrift 314, Art. 30 (2026)",
+      "journal": "Math. Z.",
+      "volume": "314",
+      "issue": "2",
+      "number": "Art. 30",
+      "pub_year": 2026,
       "doi": "10.1007/s00209-026-04109-1"
     }
   ],
