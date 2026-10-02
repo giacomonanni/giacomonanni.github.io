@@ -73,6 +73,8 @@ def tex_article(e):
     )
     if note:
         line += f" ({note})"
+    if e.get("doi"):
+        line += f". \\href{{https://doi.org/{e['doi']}}}{{doi:{e['doi']}}}"
     line += "}"
     return line
 
@@ -112,6 +114,8 @@ def write_latex(data):
 def html_article(e):
     note = html_article_note(e)
     note_html = f" ({note})" if note else ""
+    if e.get("doi"):
+        note_html += f' &ndash; <a href="https://doi.org/{e["doi"]}">doi:{e["doi"]}</a>'
     return (
         "                <li>\n"
         f"                    <strong>{e['title']}</strong> ({e['year']})<br>\n"

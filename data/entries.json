@@ -15,11 +15,12 @@
       "venue": "Kyoto Journal of Mathematics"
     },
     {
-      "title": "Classification of Lagrangian planes in Kummer-type hyperk\u00e4hler manifolds",
+      "title": "Classification of Lagrangian planes in generalised Kummer manifolds",
       "arxiv": "2310.15639",
       "year": 2023,
-      "status": "accepted",
-      "venue": "Mathematische Zeitschrift"
+      "status": "published",
+      "venue": "Mathematische Zeitschrift 314, Art. 30 (2026)",
+      "doi": "10.1007/s00209-026-04109-1"
     }
   ],
   "talks": [
