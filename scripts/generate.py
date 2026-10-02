@@ -6,7 +6,8 @@ Run this whenever you add/edit a publication or talk:
     python3 scripts/generate.py
 
 It writes:
-  - resources/generated/publications.tex   (\\input this into CV_Nanni.tex)
+  - resources/generated/papers.tex         (\\input under "Papers" in CV_Nanni.tex)
+  - resources/generated/preprints.tex      (\\input under "Preprints" in CV_Nanni.tex)
   - resources/generated/talks.tex          (\\input this into CV_Nanni.tex)
   - index.html                             (rewritten in place, between markers)
 
@@ -91,7 +92,7 @@ def tex_article(e):
     em = lambda j: "\\emph{" + j + "}"
     line = "\\cvlistitem{\\href{" + title_url(e) + "}{\\textit{" + e["title"] + "}}. " + journal_ref(e, em)
     if show_arxiv_link(e):
-        line += ref_end(e) + "\\href{https://arxiv.org/abs/" + e["arxiv"] + "}{arXiv:" + e["arxiv"] + "}"
+        line += ref_end(e) + "\\href{https://arxiv.org/abs/" + e["arxiv"] + "}{arXiv:" + e["arxiv"] + "} (" + str(e["year"]) + ")"
     if e.get("doi"):
         line += ". \\href{https://doi.org/" + e["doi"] + "}{doi:" + e["doi"] + "}"
     if e.get("status") in PREPRINT_STATUSES and not e.get("doi"):
@@ -118,15 +119,15 @@ def write_latex(data):
 
     pre, pub = split_articles(data)
     articles_sorted = pub + pre
-    (GEN_DIR / "publications.tex").write_text(
-        "\n\n".join(tex_article(e) for e in articles_sorted) + "\n", encoding="utf-8"
-    )
+    # two lists, \input under the "Papers" and "Preprints" subsections of the CV
+    (GEN_DIR / "papers.tex").write_text("\n\n".join(tex_article(e) for e in pub) + "\n", encoding="utf-8")
+    (GEN_DIR / "preprints.tex").write_text("\n\n".join(tex_article(e) for e in pre) + "\n", encoding="utf-8")
 
     talks_sorted = sorted(data.get("talks", []), key=lambda e: e["date"], reverse=True)
     (GEN_DIR / "talks.tex").write_text(
         "\n".join(tex_talk(e) for e in talks_sorted) + "\n", encoding="utf-8"
     )
-    print(f"wrote {GEN_DIR/'publications.tex'} ({len(articles_sorted)} entries)")
+    print(f"wrote {GEN_DIR/'papers.tex'} ({len(pub)}) and {GEN_DIR/'preprints.tex'} ({len(pre)})")
     print(f"wrote {GEN_DIR/'talks.tex'} ({len(talks_sorted)} entries)")
 
 
@@ -136,7 +137,7 @@ def html_article(e):
     em = lambda j: f"<em>{j}</em>"
     line = f'<a href="{title_url(e)}"><em>{e["title"]}</em></a>. {journal_ref(e, em)}'
     if show_arxiv_link(e):
-        line += ref_end(e) + f'<a href="https://arxiv.org/abs/{e["arxiv"]}">arXiv:{e["arxiv"]}</a>'
+        line += ref_end(e) + f'<a href="https://arxiv.org/abs/{e["arxiv"]}">arXiv:{e["arxiv"]}</a> ({e["year"]})'
     if e.get("doi"):
         line += f'. <a href="https://doi.org/{e["doi"]}">doi:{e["doi"]}</a>'
     if e.get("status") in PREPRINT_STATUSES and not e.get("doi"):

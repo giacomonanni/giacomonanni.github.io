@@ -3,7 +3,7 @@
 `data/entries.json` is now the only place you edit when you add a
 conference, talk, poster, or paper. `scripts/generate.py` turns it into:
 
-- `resources/generated/publications.tex` and `resources/generated/talks.tex`
+- `resources/generated/papers.tex`, `resources/generated/preprints.tex` and `resources/generated/talks.tex`
   — `\input{}` into `CV_Nanni.tex` (already wired up)
 - the `<!-- PUBLICATIONS:START/END -->` and `<!-- TALKS:START/END -->`
   blocks inside `index.html` — rewritten in place
@@ -36,7 +36,7 @@ sync.
   Posters" are replaced by marker comments the script fills in.
 - `resources/CV_Nanni.tex`: the `\cvlistitem{...}` and `\cventry{...}` lines
   in the Publications and Talks sections are replaced by
-  `\input{generated/publications.tex}` / `\input{generated/talks.tex}`.
+  `\input{generated/papers.tex}` + `\input{generated/preprints.tex}` / `\input{generated/talks.tex}`.
   Everything else in the CV (Education, Research visits, Teaching,
   Distinctions, Languages) is untouched — still edited by hand as before.
 - `data/entries.json`: reconstructed from what was on the site and in the
