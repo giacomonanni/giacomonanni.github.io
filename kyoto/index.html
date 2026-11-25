@@ -4,9 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Notes – Lagrangian fibrations on Nikulin orbifolds (Kyoto, 2 October 2026)</title>
-    <!-- GitHub Pages has no server-side redirects: jump to the PDF immediately -->
-    <script>window.location.replace("../notes/kyoto-2026.pdf");</script>
-    <meta http-equiv="refresh" content="0; url=../notes/kyoto-2026.pdf">
+    <!-- GitHub Pages has no server-side redirects: register the visit with GoatCounter, then jump to the PDF.
+         If GoatCounter is blocked (ad blocker), the fallback timer redirects anyway after 1.5 s. -->
+    <script>
+        var target = "../notes/kyoto-2026.pdf", done = false;
+        function go() { if (!done) { done = true; window.location.replace(target); } }
+        function countThenGo() {
+            try { window.goatcounter.count({path: "/kyoto/", title: "Kyoto notes (redirect)"}); } catch (e) {}
+            setTimeout(go, 300);
+        }
+        setTimeout(go, 1500);
+    </script>
+    <script data-goatcounter="https://giacomonanni.goatcounter.com/count"
+            data-goatcounter-settings='{"no_onload": true}'
+            async src="//gc.zgo.at/count.js" onload="countThenGo()" onerror="go()"></script>
+    <meta http-equiv="refresh" content="3; url=../notes/kyoto-2026.pdf">
 </head>
 <body>
     <p>Notes for the talk <em>Lagrangian fibrations on Nikulin orbifolds</em>
