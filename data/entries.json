@@ -28,6 +28,16 @@
   ],
   "talks": [
     {
+      "date": "2026-11",
+      "kind": "Talk",
+      "event": "Séminaire Algèbre, géométrie, topologie",
+      "event_link": "https://indico.math.cnrs.fr/category/686/",
+      "institution": "Université Côte d'Azur",
+      "city": "Nice",
+      "country": "France",
+      "notes": "nice/"
+    },
+    {
       "date": "2026-10",
       "kind": "Talk",
       "event": "Algebraic Geometry Seminar",
