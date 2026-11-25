@@ -157,7 +157,7 @@ def html_talk(e):
         bits.append(", " + ", ".join(location_bits))
     bits.append(f" ({talk_date_label(e['date'])})")
     if e.get("notes"):
-        bits.append(f' – <a href="{e["notes"]}">notes</a>')
+        bits.append(f' – <a href="{e["notes"]}" data-goatcounter-click="{e["notes"]}">notes</a>')
     return f"                <li>{''.join(bits)}</li>"
 
 
